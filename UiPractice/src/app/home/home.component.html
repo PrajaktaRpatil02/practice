@@ -1,0 +1,84 @@
+<p>home works!</p>
+<button type="button" (click)="onclickRegister()">Register here</button>
+<button type="button" (click)="onclickBook()">Book details</button>
+
+
+<div class="modal" *ngIf="editAddressFormvisible">
+    <div class="one">
+<form class="form" [formGroup]="editAddressForm">
+    <span class="close" (click)="closeModal()">&times;</span>
+
+    <h3>Update Address</h3>
+    <label>Address Line:</label>
+    <input type="text" placeholder="Enter address" class="inp" [formControl]="addressLine">
+     
+    <label>City</label>
+    <input type="text" class="inp" placeholder="Enter city " [formControl]="city">
+
+    <label>Pincode</label>
+    <input type="text" class="inp" placeholder="Enter pincode" [formControl]="pincode">
+
+
+    <button class="btn" type="button" (click)="updateAddress()">Edit</button>
+
+</form>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<div class="container">
+    <table class="table">
+      <thead class="thead">
+       <tr>
+          <th>Sr.No</th>
+          <th>Address Line</th>
+          <th>City</th>
+          <th>Pincode</th>
+          <th>Active</th>
+       </tr>
+      </thead>
+
+      <tbody class="tbody">
+        @for(address of addressList;track address.id){
+        <tr>
+            <td>{{$index+1}}</td>
+            <td>{{address.addressLine}}</td>
+            <td>{{address.city}}</td>
+            <td>{{address.pincode}}</td>
+            <td>
+                <div class="action">
+                  <div class="edit">
+                    <i class="fa-solid fa-pen-to-square" (click)="modalVisible(address)"></i>
+                  </div>
+                  <div class="delete">
+                    <i class="fa fa-trash" aria-hidden="true" (click)="deleteAddress(address)"></i>
+                  </div>
+                </div>
+            </td>
+        </tr>
+    }
+      </tbody>
+    </table>
+
+</div>
+ 

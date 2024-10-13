@@ -1,0 +1,17 @@
+<div class="conatainer">
+    <form class="form" [formGroup]="registerForm">
+        <h3>Register Form</h3>
+        <label>Username :</label>
+        <input type="text" placeholder="Enter username" class="inp" [formControl]="username">
+
+        <label>EmailID:</label>
+        <input type="email" class="inp" placeholder="Enter email" [formControl]="emailid">
+        
+        <label>Paasword :</label>
+        <input type="password" class="inp" placeholder="Enter password" [formControl]="password">
+
+        <button type="button" class="btn" (click)="register()">Submit</button>
+    </form>
+
+</div>
+

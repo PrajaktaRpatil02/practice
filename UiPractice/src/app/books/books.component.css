@@ -1,0 +1,114 @@
+.container{
+    background-color: antiquewhite;
+    width: 100%;
+    padding: 30px;
+    height: 100vh;
+    flex-wrap: wrap;
+    column-gap:calc(20%/3);
+    row-gap: 30px;
+    display: flex;
+
+}
+
+.banner{
+    background-color: white;
+    width: 30%;
+    border-radius: 20px;
+    height: 150px;
+    justify-content: center;
+    text-align: center;
+
+}
+h3{
+    justify-content: center;
+    text-align: center;
+}
+
+p{
+    justify-content:left;
+    text-align: left;
+    row-gap: 10px;
+}
+
+.btn{
+    display: flex;
+    column-gap: 12px;
+    padding-top: 10px;
+}
+.btn-edit{
+    padding: 10px 20px;
+    border: none;
+    background-color: rgb(134, 237, 134);
+    
+  
+}
+
+.btn-delete{
+    padding: 10px 20px;
+    border: none;
+    background-color:rgb(134, 237, 134);
+    
+  
+}
+
+
+/* modal css */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.one {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    position: relative;
+    width: 40%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.inp {
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.btn-modal {
+    background-color: orange;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-modal:hover {
+    background-color: darkorange;
+}

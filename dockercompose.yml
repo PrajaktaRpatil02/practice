@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  
+ 
+  backend:
+    image: carfrontendimg 
+    container_name: backendcon
+    build:
+      context: ./backendcon  
+    ports:
+      - "8081:8080"
+    networks:
+      - mynetwork
+
+
+  frontend:
+    image: carfrontendimg 
+    container_name: frontendcon
+    build:
+      context: ./frontendcon 
+    ports:
+      - "81:80"  
+    depends_on:
+      - backend  
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge

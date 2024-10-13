@@ -1,0 +1,57 @@
+<div class="modal" *ngIf="updateformvisible">
+
+    <div class="one">
+    <form class="form" [formGroup]="addForm">
+        <span class="close" (click)="closeModal()">&times;</span>
+
+        <h3>Add book</h3>
+        <label>Title:</label>
+        <input type="text" class="inp" [formControl]="title">
+
+        <label>author:</label>
+        <input type="text" class="inp" [formControl]="author">
+
+        <label>genre:</label>
+        <input type="text" class="inp" [formControl]="genre">
+
+        <label>price:</label>
+        <input type="number" class="inp" [formControl]="price">
+
+        <label>rating:</label>
+        <input type="number" class="inp"[formControl]="rating">
+
+        <button type="button" class="btn-modal" (click)="updateBook()">Add</button>
+    </form>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    @for(bookresponse of bookList;track bookresponse.id){
+    <div class="banner">  
+        <h3>{{bookresponse.title}}</h3>
+
+        <p>  author: {{bookresponse.author}}</p>
+        <p>  genre: {{bookresponse.genre}}</p>
+        <p>  price: {{bookresponse.price}}</p>
+        <p>  rating: {{bookresponse.rating}}</p>
+        <div class="btn">
+            <button type="button" class="btn-edit" (click)="adddetails()">Add details</button>
+       <button type="button" class="btn-edit" (click)="openmodal(bookresponse)">Edit details</button>
+       <button type="button" class="btn-delete" (click)="deleteBook(bookresponse)">Delete</button>
+    </div>
+    </div>
+}
+</div>
